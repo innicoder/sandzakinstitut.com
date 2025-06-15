@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { NewsletterForm } from "@/components/ui/newsletter-form";
 import Link from "next/link";
@@ -228,9 +227,9 @@ export default function NewsletterPage() {
               <Card>
                 <CardContent className="p-6">
                   <p className="mb-4 italic text-muted-foreground">
-                    "Newsletter Instituta Sandžak je moj glavni izvor informacija
+                    &quot;Newsletter Instituta Sandžak je moj glavni izvor informacija
                     o dešavanjima u regionu. Cijenim kvalitet sadržaja i
-                    objektivnost pristupa."
+                    objektivnost pristupa.&quot;
                   </p>
                   <div className="font-medium">Dr. Amina Mujić</div>
                   <div className="text-sm text-muted-foreground">
@@ -242,9 +241,9 @@ export default function NewsletterPage() {
               <Card>
                 <CardContent className="p-6">
                   <p className="mb-4 italic text-muted-foreground">
-                    "Kao novinar, newsletter mi pomaže da budem u toku sa
+                    &quot;Kao novinar, newsletter mi pomaže da budem u toku sa
                     najnovijim istraživanjima. Posebno su korisne analize
-                    i statistički podaci."
+                    i statistički podaci.&quot;
                   </p>
                   <div className="font-medium">Emir Hasanović</div>
                   <div className="text-sm text-muted-foreground">

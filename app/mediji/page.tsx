@@ -118,7 +118,7 @@ export default function MediaPage() {
 
               <Card>
                 <CardHeader>
-                  <Image className="mb-2 h-8 w-8 text-primary" />
+                  <Image className="mb-2 h-8 w-8 text-primary" alt="" />
                   <CardTitle>Logotipi i vizuali</CardTitle>
                 </CardHeader>
                 <CardContent>
