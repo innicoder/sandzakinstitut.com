@@ -45,15 +45,30 @@
   - [ ] Author profiles
   - [ ] Book categories and search
 
-### Phase 3: Dynamic Features (Weeks 7-10)
+### Phase 3: Dynamic Features - Solo Dev Approach (Weeks 7-10)
 - [ ] Supabase setup and integration
-- [ ] Basic admin panel for content management
-- [ ] Dynamic blog post creation
-- [ ] Enhanced search with Algolia
-- [ ] Event registration system
-- [ ] Download tracking
-- [ ] Comment system (moderated)
-- [ ] Final testing and polish
+- [ ] **Smart Admin Panel** (60 hours total)
+  - [ ] Week 1: Core Extensions (20h)
+    - [ ] Universal content system (news, publications, books in one)
+    - [ ] Simple file manager for PDFs/documents
+    - [ ] Contact form viewer
+    - [ ] Newsletter subscriber list with CSV export
+  - [ ] Week 2: Essential Features (20h)
+    - [ ] Unified content editor with type selector
+    - [ ] Bulk operations (publish, delete, export)
+    - [ ] Basic search and filters
+    - [ ] Image optimization on upload
+  - [ ] Week 3: Integration & Polish (20h)
+    - [ ] Google Forms embed for event registration
+    - [ ] Mailchimp API for newsletters
+    - [ ] Google Analytics dashboard widget
+    - [ ] FAQ as editable JSON
+- [ ] **Simplified Features**
+  - [ ] Event registration via Google Forms
+  - [ ] Search with Algolia free tier
+  - [ ] Download tracking (simple counter)
+  - [ ] Skip complex features: workflow, comments, surveys
+- [ ] Final testing and deployment
 
 ### Done
 - [x] Created comprehensive business specification document (2025-06-14)
@@ -67,6 +82,15 @@
 - [x] Document navigation structure and inconsistencies (2025-01-15)
 
 ## Notes
+
+### Admin Panel Gap Analysis (2025-01-15)
+The current admin implementation covers only 25% of required features. Critical missing components:
+- **Content Management**: Publications, Books, Research Projects, Archive
+- **Communication**: Newsletter system, Contact forms, FAQ management  
+- **Advanced Features**: Grant management, Event registrations, Member system
+- **System Features**: User management, Analytics, Multi-language support
+
+See `docs/20250115_admin_panel_gap_analysis.md` and `docs/20250115_admin_advanced_features.md` for detailed specifications.
 
 ### Missing Links Analysis (2025-01-15)
 
@@ -109,6 +133,20 @@
 - Markdown files for initial content management
 - Progressive enhancement philosophy
 - Mobile-first responsive design
+
+### Technical Debt
+- **Admin Panel**: Currently implements only 4/16 required features (News, Events, Team, Dashboard)
+- **Missing Critical Features**: Publications, Books, Archive, Newsletter, Grants, Event Registration
+- **Solo Developer Reality**: 60 hours over 4 weeks using smart shortcuts (see `20250115_solo_dev_admin_strategy.md`)
+- Navigation inconsistencies between header and footer
+- Need to standardize content management approach (currently mixed static/dynamic)
+
+### Solo Developer Strategy (2025-01-15)
+- **Smart Approach**: Unify content types into single flexible system
+- **Time Savers**: Reuse components, leverage external services (Mailchimp, Google Forms)
+- **Skip Complex Features**: No custom email, workflow, or survey builders
+- **Realistic Timeline**: 4 weeks part-time (60 hours total)
+- See `docs/20250115_solo_dev_admin_strategy.md` for pragmatic implementation plan
 
 ### MVP Priorities
 1. Professional appearance and credibility
