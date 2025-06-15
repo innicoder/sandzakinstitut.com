@@ -42,9 +42,9 @@ export const SITE_STATS = {
 export const NAV_LINKS = {
   about: {
     main: '/o-nama',
-    mission: '/o-nama#misija-vizija', // Link to section instead of separate page
+    mission: '/o-nama', // Mission is shown on main about page
     team: '/o-nama/tim',
-    history: '/o-nama#historija' // Link to section instead of separate page
+    history: '/o-nama/historija' // Separate history page exists
   },
   research: {
     main: '/istrazivanja',

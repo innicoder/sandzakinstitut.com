@@ -38,7 +38,7 @@ export default function NewsletterPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <Card>
                 <CardHeader>
-                  <CheckCircle className="mb-2 h-8 w-8 text-green-600" />
+                  <CheckCircle className="mb-2 h-8 w-8 text-success" />
                   <CardTitle className="text-lg">Ekskluzivan sadržaj</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -50,7 +50,7 @@ export default function NewsletterPage() {
 
               <Card>
                 <CardHeader>
-                  <Calendar className="mb-2 h-8 w-8 text-blue-600" />
+                  <Calendar className="mb-2 h-8 w-8 text-info" />
                   <CardTitle className="text-lg">Pravovremene informacije</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -62,7 +62,7 @@ export default function NewsletterPage() {
 
               <Card>
                 <CardHeader>
-                  <Gift className="mb-2 h-8 w-8 text-purple-600" />
+                  <Gift className="mb-2 h-8 w-8 text-accent" />
                   <CardTitle className="text-lg">Besplatni resursi</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -74,7 +74,7 @@ export default function NewsletterPage() {
 
               <Card>
                 <CardHeader>
-                  <Shield className="mb-2 h-8 w-8 text-orange-600" />
+                  <Shield className="mb-2 h-8 w-8 text-warning" />
                   <CardTitle className="text-lg">Bez spama</CardTitle>
                 </CardHeader>
                 <CardContent>

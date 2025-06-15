@@ -56,9 +56,9 @@ export function NewsletterForm({
 
   if (status === "success" && variant === "default") {
     return (
-      <Alert className="mx-auto max-w-md border-green-200 bg-green-50">
-        <CheckCircle className="h-4 w-4 text-green-600" />
-        <AlertDescription className="text-green-800">
+      <Alert className="mx-auto max-w-md border-success/20 bg-success/5">
+        <CheckCircle className="h-4 w-4 text-success" />
+        <AlertDescription className="text-success-foreground">
           {message}
         </AlertDescription>
       </Alert>
@@ -78,7 +78,7 @@ export function NewsletterForm({
         disabled={status === "loading"}
         className={`
           ${variant === "inline" ? "flex-1 rounded-lg px-6 py-3" : "rounded-lg px-6 py-3"}
-          ${status === "error" ? "border-red-500" : ""}
+          ${status === "error" ? "border-destructive" : ""}
         `}
       />
       <Button 
@@ -91,9 +91,9 @@ export function NewsletterForm({
       </Button>
       
       {status === "error" && (
-        <Alert className="mt-2 border-red-200 bg-red-50">
-          <AlertCircle className="h-4 w-4 text-red-600" />
-          <AlertDescription className="text-red-800">
+        <Alert className="mt-2 border-destructive/20 bg-destructive/5">
+          <AlertCircle className="h-4 w-4 text-destructive" />
+          <AlertDescription className="text-destructive-foreground">
             {message}
           </AlertDescription>
         </Alert>

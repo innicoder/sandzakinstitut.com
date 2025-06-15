@@ -118,7 +118,7 @@ export default function ProjectsPage() {
               <Card key={project.id} className="overflow-hidden">
                 <div className="grid md:grid-cols-3">
                   <div className="bg-primary/5 p-6 md:p-8">
-                    <div className="mb-4 inline-block rounded-full bg-green-500/10 px-3 py-1 text-sm font-medium text-green-600">
+                    <div className="mb-4 inline-block rounded-full bg-success/10 px-3 py-1 text-sm font-medium text-success">
                       {project.status}
                     </div>
                     <h3 className="mb-4 text-xl font-bold">{project.title}</h3>
@@ -212,7 +212,7 @@ export default function ProjectsPage() {
                     <span className="text-xs font-medium text-muted-foreground">
                       {project.period}
                     </span>
-                    <span className="rounded-full bg-blue-500/10 px-2 py-1 text-xs font-medium text-blue-600">
+                    <span className="rounded-full bg-info/10 px-2 py-1 text-xs font-medium text-info">
                       {project.status}
                     </span>
                   </div>

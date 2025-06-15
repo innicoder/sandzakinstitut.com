@@ -77,9 +77,9 @@ export default function DemoFeaturedPage() {
       <section className="mb-16">
         <h2 className="mb-8 text-3xl font-bold">Priority System</h2>
         <div className="grid gap-6 md:grid-cols-4">
-          <Card className="border-amber-200 bg-gradient-to-br from-amber-50/50 to-card">
+          <Card className="border-warning/20 bg-gradient-to-br from-warning/5 to-card">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-amber-700">
+              <CardTitle className="flex items-center gap-2 text-warning">
                 <span>👑</span>
                 Featured (8+)
               </CardTitle>
@@ -91,9 +91,9 @@ export default function DemoFeaturedPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-blue-200 bg-gradient-to-br from-blue-50/50 to-card">
+          <Card className="border-info/20 bg-gradient-to-br from-info/5 to-card">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-blue-700">
+              <CardTitle className="flex items-center gap-2 text-info">
                 <span>⭐</span>
                 Highlighted (6-7)
               </CardTitle>

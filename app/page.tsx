@@ -139,7 +139,7 @@ export default function Home() {
                 src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=80",
                 alt: "Demografska studija Sandžak"
               }}
-              href="/vijesti/demografska-studija"
+              href="/vijesti/demografska-studija-2025"
               date={new Date('2025-06-14')}
               readTime="5 min čitanja"
               category="Istraživanja"
@@ -153,7 +153,7 @@ export default function Home() {
                 src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop&q=80",
                 alt: "Konferencija o kulturnom nasljeđu"
               }}
-              href="/vijesti/konferencija-najava"
+              href="/vijesti/konferencija-kulturno-nasljedje"
               date={new Date('2025-06-10')}
               readTime="3 min čitanja"
               category="Događaji"
@@ -167,7 +167,7 @@ export default function Home() {
                 src: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop&q=80",
                 alt: "Partnerstvo sa univerzitetom"
               }}
-              href="/vijesti/partnerstvo-univerzitet"
+              href="/vijesti/partnerstvo-univerzitet-np"
               date={new Date('2025-06-05')}
               readTime="4 min čitanja"
               category="Saradnja"

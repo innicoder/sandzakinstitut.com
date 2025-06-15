@@ -55,6 +55,18 @@ html {
     --accent: 158 64% 22%;
     --accent-foreground: 0 0% 100%;
     
+    /* Success colors - professional green (same as accent for consistency) */
+    --success: 158 64% 22%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Info colors - professional blue */
+    --info: 213 94% 68%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Warning colors - professional amber */
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+    
     /* Destructive colors - formal red */
     --destructive: 0 72% 38%;
     --destructive-foreground: 0 0% 100%;
@@ -96,6 +108,18 @@ html {
     /* Accent colors */
     --accent: 158 64% 42%;
     --accent-foreground: 0 0% 100%;
+    
+    /* Success colors - professional green (same as accent for consistency) */
+    --success: 158 64% 42%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Info colors - professional blue */
+    --info: 213 74% 68%;
+    --info-foreground: 222 47% 11%;
+    
+    /* Warning colors - professional amber */
+    --warning: 45 93% 67%;
+    --warning-foreground: 222 47% 11%;
     
     /* Destructive colors */
     --destructive: 0 72% 51%;

@@ -58,9 +58,9 @@ export default function RegistrationForm({ eventId }: RegistrationFormProps) {
   
   if (isSuccess) {
     return (
-      <Alert className="bg-green-50 border-green-200">
-        <CheckCircleIcon className="h-4 w-4 text-green-600" />
-        <AlertDescription className="text-green-800">
+      <Alert className="bg-success/5 border-success/20">
+        <CheckCircleIcon className="h-4 w-4 text-success" />
+        <AlertDescription className="text-success-foreground">
           Vaša prijava je uspešno poslata! Kontaktiraćemo vas uskoro sa dodatnim informacijama.
         </AlertDescription>
       </Alert>

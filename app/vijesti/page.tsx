@@ -219,7 +219,7 @@ export default function NewsPage() {
                 key={article.id} 
                 className={cn(
                   "group hover:shadow-lg transition-shadow",
-                  article.isFeatured && article.priority >= PRIORITY_THRESHOLDS.FEATURED && "border-amber-200/30 bg-gradient-to-br from-amber-50/20 to-transparent"
+                  article.isFeatured && article.priority >= PRIORITY_THRESHOLDS.FEATURED && "border-warning/20 bg-gradient-to-br from-warning/5 to-transparent"
                 )}
               >
                 <div className="aspect-[16/9] overflow-hidden bg-muted">
