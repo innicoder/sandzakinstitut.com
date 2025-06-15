@@ -22,7 +22,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24" id="misija">
         <div className="container">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold">Naša misija i vizija</h2>
