@@ -2,19 +2,23 @@
 
 ## Tasks
 
-### Current - Fix Missing Links
-- [ ] Create missing pages for broken links
-  - [ ] Create `/o-nama/historija` page (History)
-  - [ ] Create `/publikacije` page or redirect to `/istrazivanja/publikacije`
-  - [ ] Create `/baza-podataka` page or redirect to `/istrazivanja/podaci`
-- [ ] Implement dynamic routing for news articles
-  - [ ] Create `/vijesti/[slug]` dynamic route structure
-  - [ ] Create `/vijesti/demografska-studija` article
-  - [ ] Create `/vijesti/konferencija-najava` article
-  - [ ] Create `/vijesti/partnerstvo-univerzitet` article
-- [ ] Fix navigation inconsistencies
-  - [ ] Add `/partneri` to navigation or remove the page
-  - [ ] Resolve hash link conflicts in constants (`#misija-vizija` vs `/o-nama/misija`)
+### Current - Immediate Actions (Week 1)
+- [ ] **Fix What's Broken** (8 hours)
+  - [ ] Fix navigation constants and hash links
+  - [ ] Create `/o-nama/historija` page
+  - [ ] Add redirects for footer duplicates
+  - [ ] Implement `/vijesti/[slug]` dynamic routing
+  - [ ] Create 3 initial news articles
+- [ ] **Critical Missing Features** (6 hours)
+  - [ ] Contact form backend with Resend
+  - [ ] Basic SEO (sitemap, robots.txt, meta tags)
+  - [ ] Error handling (error.tsx, API try-catch)
+- [ ] **Mobile & Deploy** (6 hours)
+  - [ ] Test and fix mobile responsiveness
+  - [ ] Set up Vercel deployment
+  - [ ] Configure environment variables
+  - [ ] Deploy to staging for client review
+
 
 ### Phase 1: MVP (Weeks 1-3)
 - [x] Set up Next.js project with TypeScript and Tailwind (2025-06-14)
@@ -80,6 +84,9 @@
 - [x] Audit all links in the application - found missing pages (2025-01-15)
 - [x] Identified missing pages and broken links (2025-01-15)
 - [x] Document navigation structure and inconsistencies (2025-01-15)
+- [x] Created comprehensive admin panel analysis (2025-01-15)
+- [x] Developed solo developer implementation strategy (2025-01-15)
+- [x] Documented all missing features and gaps (2025-01-15)
 
 ## Notes
 
@@ -90,7 +97,20 @@ The current admin implementation covers only 25% of required features. Critical 
 - **Advanced Features**: Grant management, Event registrations, Member system
 - **System Features**: User management, Analytics, Multi-language support
 
-See `docs/20250115_admin_panel_gap_analysis.md` and `docs/20250115_admin_advanced_features.md` for detailed specifications.
+**📋 Master Reference Document**: See `docs/20250115_comprehensive_admin_analysis.md` for complete analysis including:
+- Full feature requirements with specifications
+- Solo developer implementation strategy (60 hours)
+- Technical architecture and database design
+- Week-by-week implementation roadmap
+- Cost estimates and risk mitigation
+
+**🔍 Final Review**: See `docs/20250115_final_review_solo_dev.md` for:
+- Critical items we missed (deployment, contact form backend, SEO)
+- Realistic 80-hour timeline including testing and deployment
+- Emergency shortcuts if running out of time
+- The REAL minimum viable admin (40 hours)
+
+Also see: `20250115_admin_panel_gap_analysis.md`, `20250115_admin_advanced_features.md`, `20250115_solo_dev_admin_strategy.md`
 
 ### Missing Links Analysis (2025-01-15)
 
