@@ -41,24 +41,24 @@ export function FeaturedCard({
 
   return (
     <Card className={cn(
-      'overflow-hidden',
+      'overflow-hidden group cursor-pointer border-2 shadow-lg hover:shadow-2xl hover:border-primary/40 transform hover:-translate-y-1',
       isHero && 'lg:max-w-4xl mx-auto',
       className
     )}>
       <div className="grid md:grid-cols-2">
         {/* Image section */}
-        <div className="aspect-[16/9] overflow-hidden bg-muted md:aspect-auto md:h-full">
+        <div className="relative aspect-[16/9] overflow-hidden bg-muted md:aspect-auto md:h-full">
           {image ? (
             <OptimizedImage
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority={priority >= PRIORITY_THRESHOLDS.FEATURED}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           ) : (
-            <div className="flex h-full items-center justify-center text-muted-foreground">
+            <div className="flex h-full items-center justify-center text-muted-foreground/50 bg-gradient-to-br from-muted to-muted/50">
               Slika članka
             </div>
           )}
@@ -69,7 +69,7 @@ export function FeaturedCard({
           {/* Meta information */}
           <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             {category && (
-              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              <span className="rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 hover:shadow-md">
                 {category}
               </span>
             )}
@@ -83,14 +83,16 @@ export function FeaturedCard({
 
             {/* Featured indicator */}
             {isFeatured && (
-              <Crown className="h-3.5 w-3.5 text-amber-600" />
+              <span className="flex items-center gap-1.5 bg-amber-100 border border-amber-300 text-amber-800 px-2.5 py-1 rounded-md shadow-sm">
+                <Crown className="h-3.5 w-3.5" />
+              </span>
             )}
           </div>
 
           {/* Title */}
           <h2 className={cn(
-            "mb-3 font-bold line-clamp-2",
-            isHero ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"
+            "mb-3 font-bold line-clamp-2 transition-colors duration-200 group-hover:text-primary text-foreground",
+            isHero ? "text-2xl md:text-3xl lg:text-4xl" : "text-xl md:text-2xl lg:text-3xl"
           )}>
             {title}
           </h2>
@@ -98,31 +100,31 @@ export function FeaturedCard({
           {/* Description */}
           {description && (
             <p className={cn(
-              "mb-4 text-muted-foreground",
-              isHero ? "line-clamp-4" : "line-clamp-3"
+              "mb-6 text-muted-foreground font-medium leading-relaxed",
+              isHero ? "line-clamp-4 text-base" : "line-clamp-3 text-sm"
             )}>
               {description}
             </p>
           )}
 
           {/* Additional meta and CTA */}
-          <div className="mb-6 flex items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <User className="h-3 w-3" />
+          <div className="mb-6 flex items-center gap-4 text-sm">
+            <span className="flex items-center gap-1.5 text-muted-foreground font-medium">
+              <User className="h-4 w-4" />
               Redakcija
             </span>
             {readTime && (
-              <span className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
+              <span className="flex items-center gap-1.5 text-muted-foreground font-medium">
+                <Clock className="h-4 w-4" />
                 {readTime}
               </span>
             )}
           </div>
 
-          <Button asChild>
+          <Button asChild variant="default" className="shadow-md hover:shadow-lg font-semibold px-6 py-2.5">
             <Link href={href}>
               Pročitajte više
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>

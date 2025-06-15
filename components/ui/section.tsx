@@ -3,20 +3,22 @@ import { cn } from "@/lib/utils";
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
-  variant?: "default" | "muted" | "primary";
+  variant?: "default" | "muted" | "primary" | "formal";
   size?: "default" | "sm" | "lg";
+  bordered?: boolean;
 }
 
 const sectionVariants = {
   default: "",
-  muted: "bg-muted/50",
+  muted: "bg-gradient-to-b from-muted/30 via-muted/40 to-muted/30",
   primary: "bg-primary text-primary-foreground",
+  formal: "bg-gradient-to-b from-primary/5 via-background to-background",
 };
 
 const sectionSizes = {
-  sm: "py-8 md:py-12",
-  default: "py-16 md:py-24",
-  lg: "py-24 md:py-32",
+  sm: "py-12 md:py-16 lg:py-20",
+  default: "py-16 md:py-20 lg:py-28",
+  lg: "py-20 md:py-28 lg:py-36",
 };
 
 export function Section({
@@ -24,12 +26,14 @@ export function Section({
   className,
   variant = "default",
   size = "default",
+  bordered = false,
 }: SectionProps) {
   return (
     <section
       className={cn(
         sectionVariants[variant],
         sectionSizes[size],
+        bordered && "border-y-2 border-border/40",
         className
       )}
     >
@@ -40,6 +44,7 @@ export function Section({
 
 interface SectionHeaderProps {
   title: string;
+  subtitle?: string;
   description?: string;
   align?: "left" | "center";
   className?: string;
@@ -47,6 +52,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({
   title,
+  subtitle,
   description,
   align = "center",
   className,
@@ -54,14 +60,17 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mb-12",
-        align === "center" && "mx-auto max-w-3xl text-center",
+        "mb-16",
+        align === "center" && "mx-auto max-w-4xl text-center",
         className
       )}
     >
-      <h2 className="mb-4 text-3xl font-bold md:text-4xl">{title}</h2>
+      {subtitle && (
+        <p className="heading-formal mb-4">{subtitle}</p>
+      )}
+      <h2 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">{title}</h2>
       {description && (
-        <p className="text-lg text-muted-foreground">{description}</p>
+        <p className="lead mx-auto max-w-3xl text-muted-foreground">{description}</p>
       )}
     </div>
   );

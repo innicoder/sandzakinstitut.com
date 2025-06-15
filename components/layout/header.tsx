@@ -39,118 +39,168 @@ export function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold">Institut Sandžak</span>
-        </Link>
+    <header className="sticky top-0 z-50 w-full border-b-2 border-border/40 bg-background/98 backdrop-blur-sm shadow-sm">
+      <div className="container">
+        {/* Top bar for extra formality */}
+        <div className="hidden md:block border-b border-border/20 py-2">
+          <div className="flex items-center justify-between text-xs text-muted-foreground">
+            <div className="flex items-center gap-4">
+              <span>Nezavisna istraživačka institucija</span>
+              <span className="text-border">|</span>
+              <span>Osnovana 2020. godine</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="tel:+38120123456" className="hover:text-primary transition-colors">+381 20 123 456</a>
+              <span className="text-border">|</span>
+              <a href="mailto:info@institutsandzak.org" className="hover:text-primary transition-colors">info@institutsandzak.org</a>
+            </div>
+          </div>
+        </div>
+        
+        {/* Main navigation */}
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="flex flex-col">
+              <span className="text-xs font-medium text-muted-foreground uppercase tracking-[0.15em] mb-1">INSTITUT</span>
+              <span className="text-2xl font-bold tracking-tight text-primary">SANDŽAK</span>
+            </div>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/" className={navigationMenuTriggerStyle()}>
-                  Početna
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+          {/* Desktop Navigation */}
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList className="space-x-2">
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    href="/" 
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-base font-medium px-6 py-3 hover:bg-primary/5"
+                    )}
+                  >
+                    Početna
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>O nama</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        href="/o-nama"
-                      >
-                        <div className="mb-2 mt-4 text-lg font-medium">
-                          Institut Sandžak
-                        </div>
-                        <p className="text-sm leading-tight text-muted-foreground">
-                          Centar za istraživanje i edukaciju regije Sandžak
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <ListItem href="/o-nama/misija" title="Misija i vizija">
-                    Naši ciljevi i aspiracije za budućnost
-                  </ListItem>
-                  <ListItem href="/o-nama/tim" title="Naš tim">
-                    Upoznajte naše stručnjake i istraživače
-                  </ListItem>
-                  <ListItem href="/o-nama/historija" title="Historija">
-                    Naša priča i razvoj kroz godine
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-base font-medium px-6 py-3 hover:bg-primary/5">
+                  O nama
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-8 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-sm bg-gradient-to-b from-primary/10 to-primary/5 p-8 no-underline outline-none focus:shadow-md transition-all hover:from-primary/15 hover:to-primary/10"
+                          href="/o-nama"
+                        >
+                          <div className="mb-3 text-lg font-semibold text-primary">
+                            Institut Sandžak
+                          </div>
+                          <p className="text-sm leading-relaxed text-muted-foreground">
+                            Centar za istraživanje i edukaciju regije Sandžak
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem href="/o-nama/misija" title="Misija i vizija">
+                      Naši ciljevi i aspiracije za budućnost
+                    </ListItem>
+                    <ListItem href="/o-nama/tim" title="Naš tim">
+                      Upoznajte naše stručnjake i istraživače
+                    </ListItem>
+                    <ListItem href="/o-nama/historija" title="Historija">
+                      Naša priča i razvoj kroz godine
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Istraživanja</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  <ListItem href="/istrazivanja/publikacije" title="Publikacije">
-                    Naučni radovi i studije
-                  </ListItem>
-                  <ListItem href="/istrazivanja/projekti" title="Projekti">
-                    Trenutni i završeni projekti
-                  </ListItem>
-                  <ListItem href="/istrazivanja/podaci" title="Baza podataka">
-                    Statistički podaci o regionu
-                  </ListItem>
-                  <ListItem href="/istrazivanja/saradnja" title="Saradnja">
-                    Partnerstva i kolaboracije
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-base font-medium px-6 py-3 hover:bg-primary/5">
+                  Istraživanja
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[500px] gap-3 p-6 md:w-[600px] md:grid-cols-2 lg:w-[700px]">
+                    <ListItem href="/istrazivanja/publikacije" title="Publikacije">
+                      Naučni radovi i studije
+                    </ListItem>
+                    <ListItem href="/istrazivanja/projekti" title="Projekti">
+                      Trenutni i završeni projekti
+                    </ListItem>
+                    <ListItem href="/istrazivanja/podaci" title="Baza podataka">
+                      Statistički podaci o regionu
+                    </ListItem>
+                    <ListItem href="/istrazivanja/saradnja" title="Saradnja">
+                      Partnerstva i kolaboracije
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/vijesti" className={navigationMenuTriggerStyle()}>
-                  Vijesti
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    href="/vijesti" 
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-base font-medium px-6 py-3 hover:bg-primary/5"
+                    )}
+                  >
+                    Vijesti
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/dogadjaji" className={navigationMenuTriggerStyle()}>
-                  Događaji
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    href="/dogadjaji" 
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-base font-medium px-6 py-3 hover:bg-primary/5"
+                    )}
+                  >
+                    Događaji
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/kontakt" className={navigationMenuTriggerStyle()}>
-                  Kontakt
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    href="/kontakt" 
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-base font-medium px-6 py-3 hover:bg-primary/5"
+                    )}
+                  >
+                    Kontakt
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
-        {/* Mobile menu button */}
-        <Button
-          variant="ghost"
-          className="md:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Zatvori meni" : "Otvori meni"}
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            className="md:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Zatvori meni" : "Otvori meni"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <nav id="mobile-menu" className="md:hidden">
-          <div className="space-y-1 px-2 pb-3 pt-2">
+        <nav id="mobile-menu" className="md:hidden border-t-2 border-border/40 bg-background/98 shadow-lg">
+          <div className="container py-6 space-y-2">
             <MobileNavLink href="/" onClick={() => setMobileMenuOpen(false)}>
               Početna
             </MobileNavLink>
@@ -169,6 +219,15 @@ export function Header() {
             <MobileNavLink href="/kontakt" onClick={() => setMobileMenuOpen(false)}>
               Kontakt
             </MobileNavLink>
+            
+            {/* Contact info in mobile */}
+            <div className="pt-4 mt-4 border-t border-border/20">
+              <p className="text-sm text-muted-foreground px-4">
+                <a href="tel:+38120123456" className="hover:text-primary transition-colors">+381 20 123 456</a>
+                <br />
+                <a href="mailto:info@institutsandzak.org" className="hover:text-primary transition-colors">info@institutsandzak.org</a>
+              </p>
+            </div>
           </div>
         </nav>
       )}
@@ -194,13 +253,13 @@ const ListItem = ({
         <Link
           href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-2 rounded-sm p-4 leading-none no-underline outline-none transition-all hover:bg-primary/5 hover:translate-x-1 focus:bg-primary/5",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-semibold leading-none text-foreground">{title}</div>
+          <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
             {children}
           </p>
         </Link>
@@ -222,7 +281,7 @@ const MobileNavLink = ({
     <Link
       href={href}
       onClick={onClick}
-      className="block rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground"
+      className="block rounded-sm px-4 py-3 text-base font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-all"
     >
       {children}
     </Link>
