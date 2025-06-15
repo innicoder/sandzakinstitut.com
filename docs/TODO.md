@@ -5,10 +5,10 @@
 ### Current - Immediate Actions (Week 1)
 - [ ] **Fix What's Broken** (8 hours)
   - [ ] Fix navigation constants and hash links
-  - [ ] Create `/o-nama/historija` page
-  - [ ] Add redirects for footer duplicates
-  - [ ] Implement `/vijesti/[slug]` dynamic routing
-  - [ ] Create 3 initial news articles
+  - [x] Create `/o-nama/historija` page (2025-01-15)
+  - [x] Add redirects for footer duplicates (2025-01-15)
+  - [x] Implement `/vijesti/[slug]` dynamic routing (2025-01-15)
+  - [x] Create 3 initial news articles (2025-01-15)
 - [ ] **Critical Missing Features** (6 hours)
   - [ ] Contact form backend with Resend
   - [ ] Basic SEO (sitemap, robots.txt, meta tags)
@@ -87,6 +87,10 @@
 - [x] Created comprehensive admin panel analysis (2025-01-15)
 - [x] Developed solo developer implementation strategy (2025-01-15)
 - [x] Documented all missing features and gaps (2025-01-15)
+- [x] Created `/o-nama/historija` page with official institute information (2025-01-15)
+- [x] Implemented redirect pages for duplicate routes (2025-01-15)
+- [x] Created dynamic routing structure for news articles at `/vijesti/[slug]` (2025-01-15)
+- [x] Updated history page with BANU founding information from 2022 (2025-01-15)
 
 ## Notes
 
@@ -146,6 +150,9 @@ Also see: `20250115_admin_panel_gap_analysis.md`, `20250115_admin_advanced_featu
 - **Tech Stack:** Next.js 14 + Tailwind + shadcn/ui for rapid development (2025-06-14)
 - **Content Strategy:** Start with Markdown/Contentlayer, migrate to Supabase later (2025-06-14)
 - **Hosting:** Vercel free tier initially, upgrade as needed (2025-06-14)
+- **Redirect Strategy:** Created redirect pages for duplicate routes to maintain single source of truth (2025-01-15)
+- **History Page:** Standalone page with expanded timeline instead of section on about page (2025-01-15)
+- **News Architecture:** Dynamic [slug] routing for scalable news system with mock data ready for CMS (2025-01-15)
 
 ### Technical Approach
 - Use shadcn/ui components to save development time

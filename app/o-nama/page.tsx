@@ -124,67 +124,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* History Timeline */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold">Naša historija</h2>
-          </div>
-
-          <div className="mx-auto max-w-3xl">
-            <div className="space-y-8">
-              <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-border">
-                <div className="absolute left-0 top-1 h-2 w-2 -translate-x-1/2 rounded-full bg-primary"></div>
-                <div className="mb-2 text-sm text-muted-foreground">2020</div>
-                <h3 className="mb-2 font-semibold">Osnivanje Instituta</h3>
-                <p className="text-sm text-muted-foreground">
-                  Grupa istraživača i akademika osniva Institut sa ciljem
-                  sistematskog proučavanja regije Sandžak.
-                </p>
-              </div>
-
-              <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-border">
-                <div className="absolute left-0 top-1 h-2 w-2 -translate-x-1/2 rounded-full bg-primary"></div>
-                <div className="mb-2 text-sm text-muted-foreground">2021</div>
-                <h3 className="mb-2 font-semibold">Prve publikacije</h3>
-                <p className="text-sm text-muted-foreground">
-                  Objavljivanje prvih naučnih studija o demografiji i ekonomskom
-                  razvoju regije.
-                </p>
-              </div>
-
-              <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-border">
-                <div className="absolute left-0 top-1 h-2 w-2 -translate-x-1/2 rounded-full bg-primary"></div>
-                <div className="mb-2 text-sm text-muted-foreground">2022</div>
-                <h3 className="mb-2 font-semibold">Edukacioni programi</h3>
-                <p className="text-sm text-muted-foreground">
-                  Pokretanje programa obuke za mlade istraživače i lokalnu zajednicu.
-                </p>
-              </div>
-
-              <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-border">
-                <div className="absolute left-0 top-1 h-2 w-2 -translate-x-1/2 rounded-full bg-primary"></div>
-                <div className="mb-2 text-sm text-muted-foreground">2023</div>
-                <h3 className="mb-2 font-semibold">Međunarodna saradnja</h3>
-                <p className="text-sm text-muted-foreground">
-                  Uspostavljanje partnerstava sa univerzitetima i institutima iz
-                  regiona i Evrope.
-                </p>
-              </div>
-
-              <div className="relative pl-8">
-                <div className="absolute left-0 top-1 h-2 w-2 -translate-x-1/2 rounded-full bg-primary"></div>
-                <div className="mb-2 text-sm text-muted-foreground">2025</div>
-                <h3 className="mb-2 font-semibold">Nova era</h3>
-                <p className="text-sm text-muted-foreground">
-                  Proširenje djelatnosti i pokretanje digitalnih inicijativa za
-                  veći domet i uticaj.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="bg-primary py-16 text-primary-foreground">
