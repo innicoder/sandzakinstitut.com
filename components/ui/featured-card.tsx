@@ -19,7 +19,7 @@ interface FeaturedCardProps {
   date?: Date;
   readTime?: string;
   category?: string;
-  variant?: 'default' | 'hero' | 'compact';
+  variant?: 'default' | 'hero';
   priority?: number;
   className?: string;
 }
@@ -32,14 +32,19 @@ export function FeaturedCard({
   date,
   readTime,
   category,
-  variant = 'default', // eslint-disable-line @typescript-eslint/no-unused-vars
+  variant = 'default',
   priority = 1,
   className,
 }: FeaturedCardProps) {
   const isFeatured = priority >= PRIORITY_THRESHOLDS.FEATURED;
+  const isHero = variant === 'hero';
 
   return (
-    <Card className={cn('overflow-hidden', className)}>
+    <Card className={cn(
+      'overflow-hidden',
+      isHero && 'lg:max-w-4xl mx-auto',
+      className
+    )}>
       <div className="grid md:grid-cols-2">
         {/* Image section */}
         <div className="aspect-[16/9] overflow-hidden bg-muted md:aspect-auto md:h-full">
@@ -83,13 +88,19 @@ export function FeaturedCard({
           </div>
 
           {/* Title */}
-          <h2 className="mb-3 text-xl font-bold md:text-2xl line-clamp-2">
+          <h2 className={cn(
+            "mb-3 font-bold line-clamp-2",
+            isHero ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"
+          )}>
             {title}
           </h2>
 
           {/* Description */}
           {description && (
-            <p className="mb-4 text-muted-foreground line-clamp-3">
+            <p className={cn(
+              "mb-4 text-muted-foreground",
+              isHero ? "line-clamp-4" : "line-clamp-3"
+            )}>
               {description}
             </p>
           )}
