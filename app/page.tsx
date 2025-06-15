@@ -230,9 +230,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5" />
         <div className="container relative">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary-foreground/80">PRIDRUŽITE SE</p>
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">Budite dio pozitivnih promjena</h2>
-            <p className="lead mb-12 text-lg opacity-90 md:text-xl">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary-foreground">PRIDRUŽITE SE</p>
+            <h2 className="mb-6 text-3xl font-bold text-primary-foreground md:text-4xl lg:text-5xl">Budite dio pozitivnih promjena</h2>
+            <p className="lead mb-12 text-lg text-primary-foreground md:text-xl">
               Prijavite se za naš newsletter i budite redovno informisani o najnovijim
               istraživanjima, stručnim događajima i institucionalnim inicijativama.
             </p>
@@ -240,7 +240,7 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Unesite vašu email adresu"
-                className="flex-1 rounded-lg border-0 bg-background/10 px-6 py-3 text-primary-foreground placeholder:text-primary-foreground/60 backdrop-blur-sm focus:bg-background/20 focus:outline-none focus:ring-2 focus:ring-white/20"
+                className="flex-1 rounded-lg border-0 bg-white/10 px-6 py-3 text-primary-foreground placeholder:text-primary-foreground/70 backdrop-blur-sm focus:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/30"
                 required
               />
               <Button size="lg" className="btn-professional min-w-[140px] bg-white text-primary hover:bg-white/90">
