@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Link from "next/link";
 import { Download, Calendar, User, Tag, Search, Filter } from "lucide-react";
 import { useState } from "react";
+import { FeaturedCard } from "@/components/ui/featured-card";
+import { PRIORITY_THRESHOLDS } from "@/lib/featured-content";
 
 // Mock data for publications
 const publications = [
@@ -135,8 +137,50 @@ export default function PublicationsPage() {
         </div>
       </section>
 
+      {/* Featured Publications */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mb-12">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Izdvojene publikacije</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Najnovije i najznačajnije studije našeg instituta
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <FeaturedCard
+              title="Demografske promjene u regionu Sandžak 2015-2025"
+              description="Sveobuhvatna analiza populacionih kretanja, migracionih tokova i njihovog uticaja na lokalni razvoj. Studija obuhvata podatke iz svih opština regije i poredi ih sa nacionalnim i regionalnim trendovima."
+              image={{
+                src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&q=80",
+                alt: "Demografska studija cover"
+              }}
+              href="/istrazivanja/publikacije/1"
+              date={new Date('2025-06-01')}
+              readTime="145 str."
+              category="Demografia"
+              priority={PRIORITY_THRESHOLDS.FEATURED} // Featured (amber crown)
+            />
+
+            <FeaturedCard
+              title="Ekonomski potencijali turizma u Sandžaku"
+              description="Studija o mogućnostima razvoja održivog turizma sa fokusom na kulturno-istorijske znamenitosti. Analiza postojećih kapaciteta i preporuke za unapređenje turističke ponude."
+              image={{
+                src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=250&fit=crop&q=80",
+                alt: "Turizam studija cover"
+              }}
+              href="/istrazivanja/publikacije/2"
+              date={new Date('2025-05-01')}
+              readTime="98 str."
+              category="Ekonomija"
+              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // Highlighted (blue star)
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Publications List */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 border-t">
         <div className="container">
           <div className="mb-8 flex items-center justify-between">
             <p className="text-sm text-muted-foreground">

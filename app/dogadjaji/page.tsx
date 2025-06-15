@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { Calendar, Clock, MapPin, Users, ArrowRight, Info } from "lucide-react";
-// import { FeaturedSection } from "@/components/ui/featured-section";
-// import { selectFeaturedContent } from "@/lib/featured-content";
+import { FeaturedCard } from "@/components/ui/featured-card";
+import { PRIORITY_THRESHOLDS } from "@/lib/featured-content";
 
 // Mock events data
 const upcomingEvents = [
@@ -80,23 +80,6 @@ const pastEvents = [
 ];
 
 export default function EventsPage() {
-  // // Get featured events
-  // const allEvents = [...upcomingEvents, ...pastEvents];
-  // const featuredEvents = selectFeaturedContent(upcomingEvents, {
-  //   maxItems: 3,
-  //   minPriority: 1,
-  // });
-  
-  // // Transform to FeaturedSection format
-  // const featuredItems = featuredEvents.map(event => ({
-  //   id: event.id.toString(),
-  //   title: event.title,
-  //   description: event.description,
-  //   href: `/dogadjaji/${event.id}`,
-  //   category: event.type,
-  //   featured: event.featured || false,
-  //   featuredPriority: event.featuredPriority,
-  // }));
   return (
     <>
       {/* Hero Section */}
@@ -114,7 +97,47 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Featured Events - removed to avoid duplication */}
+      {/* Featured Events */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mb-12">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Važni događaji</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Prioritetni događaji i aktivnosti koje ne smijete propustiti
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <FeaturedCard
+              title="Međunarodna konferencija o kulturnom nasljeđu"
+              description="Dvodnevna konferencija sa učešćem domaćih i međunarodnih stručnjaka na temu očuvanja i promocije kulturnog nasljeđa Sandžaka. Očekujemo preko 150 učesnika iz regiona i Evrope."
+              image={{
+                src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=250&fit=crop&q=80",
+                alt: "Konferencija o kulturnom nasljeđu"
+              }}
+              href="/dogadjaji/1"
+              date={new Date('2025-10-15')}
+              readTime="2 dana"
+              category="Konferencija"
+              priority={PRIORITY_THRESHOLDS.FEATURED} // Featured (amber crown)
+            />
+
+            <FeaturedCard
+              title="Radionica: Pisanje projektnih prijedloga"
+              description="Praktična radionica o pripremi projektnih prijedloga za EU fondove. Namijenjeno predstavnicima nevladinih organizacija i mladim istraživačima."
+              image={{
+                src: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=250&fit=crop&q=80",
+                alt: "Radionica projektni prijedlozi"
+              }}
+              href="/dogadjaji/2"
+              date={new Date('2025-09-22')}
+              readTime="5 sati"
+              category="Radionica"
+              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // Highlighted (blue star)
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Upcoming Events */}
       <section id="upcoming-events" className="py-16 md:py-24">

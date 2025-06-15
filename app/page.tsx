@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FeaturedCard } from "@/components/ui/featured-card";
+import { PRIORITY_THRESHOLDS } from "@/lib/featured-content";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Users, Globe, Calendar } from "lucide-react";
 
@@ -99,11 +101,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent News Section */}
+      {/* Featured News Section */}
       <section className="bg-muted/50 py-16 md:py-24">
         <div className="container">
           <div className="mb-12 flex items-center justify-between">
-            <h2 className="text-3xl font-bold md:text-4xl">Najnovije vijesti</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Izdvojene vijesti</h2>
             <Button variant="ghost" asChild>
               <Link href="/vijesti">
                 Sve vijesti
@@ -112,66 +114,49 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <div className="mb-2 text-sm text-muted-foreground">14. juni 2025</div>
-                <CardTitle>Nova studija o demografskim promjenama</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Institut je objavio sveobuhvatnu analizu demografskih trendova u
-                  regiji Sandžak tokom posljednjih deset godina...
-                </CardDescription>
-                <Link
-                  href="/vijesti/demografska-studija"
-                  className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:underline"
-                >
-                  Pročitajte više
-                  <ArrowRight className="ml-1 h-3 w-3" />
-                </Link>
-              </CardContent>
-            </Card>
+          {/* Featured Articles */}
+          <div className="grid gap-8 lg:grid-cols-2">
+            <FeaturedCard
+              title="Nova studija o demografskim promjenama u regionu Sandžak"
+              description="Institut je objavio sveobuhvatnu analizu demografskih trendova u regiji Sandžak tokom posljednjih deset godina. Studija pokazuje značajne promjene u starosnoj strukturi stanovništva i otkriva ključne faktore koji utiču na migracione tokove."
+              image={{
+                src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&q=80",
+                alt: "Demografska studija Sandžak"
+              }}
+              href="/vijesti/demografska-studija"
+              date={new Date('2025-06-14')}
+              readTime="5 min čitanja"
+              category="Istraživanja"
+              priority={PRIORITY_THRESHOLDS.FEATURED} // 8+ Featured (amber)
+            />
 
-            <Card>
-              <CardHeader>
-                <div className="mb-2 text-sm text-muted-foreground">10. juni 2025</div>
-                <CardTitle>Međunarodna konferencija o kulturnom nasljeđu</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  U oktobru organizujemo dvodnevnu konferenciju sa učešćem
-                  istraživača iz regiona i Evrope...
-                </CardDescription>
-                <Link
-                  href="/vijesti/konferencija-najava"
-                  className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:underline"
-                >
-                  Pročitajte više
-                  <ArrowRight className="ml-1 h-3 w-3" />
-                </Link>
-              </CardContent>
-            </Card>
+            <FeaturedCard
+              title="Međunarodna konferencija o kulturnom nasljeđu"
+              description="U oktobru organizujemo dvodnevnu konferenciju sa učešćem istraživača iz regiona i Evrope."
+              image={{
+                src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop&q=80",
+                alt: "Konferencija o kulturnom nasljeđu"
+              }}
+              href="/vijesti/konferencija-najava"
+              date={new Date('2025-06-10')}
+              readTime="3 min čitanja"
+              category="Događaji"
+              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // 6+ Highlighted (blue)
+            />
 
-            <Card>
-              <CardHeader>
-                <div className="mb-2 text-sm text-muted-foreground">5. juni 2025</div>
-                <CardTitle>Partnerstvo sa Univerzitetom u Novom Pazaru</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Potpisali smo sporazum o saradnji koji omogućava zajedničke
-                  istraživačke projekte i razmjenu stručnjaka...
-                </CardDescription>
-                <Link
-                  href="/vijesti/partnerstvo-univerzitet"
-                  className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:underline"
-                >
-                  Pročitajte više
-                  <ArrowRight className="ml-1 h-3 w-3" />
-                </Link>
-              </CardContent>
-            </Card>
+            <FeaturedCard
+              title="Partnerstvo sa Univerzitetom u Novom Pazaru"
+              description="Potpisali smo sporazum o saradnji koji omogućava zajedničke istraživačke projekte."
+              image={{
+                src: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop&q=80",
+                alt: "Partnerstvo sa univerzitetom"
+              }}
+              href="/vijesti/partnerstvo-univerzitet"
+              date={new Date('2025-06-05')}
+              readTime="4 min čitanja"
+              category="Saradnja"
+              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // 6+ Highlighted (blue)
+            />
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { PRIORITY_THRESHOLDS } from '@/lib/featured-content';
-import { Sparkles, Crown, Star } from 'lucide-react';
+import { Crown, Star } from 'lucide-react';
 
 interface FeaturedIndicatorProps {
   priority: number;

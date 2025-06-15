@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FeaturedCard } from "@/components/ui/featured-card";
 import Link from "next/link";
 import { ArrowRight, Calendar, User, Clock } from "lucide-react";
-// import { parseBosnianDate } from "@/lib/date-utils";
 import { cn } from "@/lib/utils";
 import { PRIORITY_THRESHOLDS } from "@/lib/featured-content";
-import { FeaturedIndicator } from "@/components/ui/featured-indicator";
 
 // Mock news data
 const newsArticles = [
@@ -121,6 +120,48 @@ export default function NewsPage() {
         </div>
       </section>
 
+      {/* Featured News Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mb-12">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Izdvojene vijesti</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Najvažnije vijesti i najnoviji događaji iz našeg instituta
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <FeaturedCard
+              title="Nova studija o demografskim promjenama u regionu Sandžak"
+              description="Institut je objavio sveobuhvatnu analizu demografskih trendova u regiji Sandžak tokom posljednjih deset godina. Studija pokazuje značajne promjene u starosnoj strukturi stanovništva i otkriva ključne faktore koji utiču na migracione tokove."
+              image={{
+                src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&q=80",
+                alt: "Demografska studija Sandžak"
+              }}
+              href="/vijesti/demografska-studija-2025"
+              date={new Date('2025-06-14')}
+              readTime="3 min čitanja"
+              category="Istraživanja"
+              priority={PRIORITY_THRESHOLDS.FEATURED} // Featured (amber crown)
+            />
+
+            <FeaturedCard
+              title="Međunarodna konferencija o kulturnom nasljeđu"
+              description="U oktobru organizujemo dvodnevnu konferenciju sa učešćem istraživača iz regiona i Evrope. Tema konferencije je 'Kulturno nasljeđe Sandžaka: Očuvanje i promocija'."
+              image={{
+                src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=250&fit=crop&q=80",
+                alt: "Konferencija o kulturnom nasljeđu"
+              }}
+              href="/vijesti/konferencija-kulturno-nasljedje"
+              date={new Date('2025-06-10')}
+              readTime="2 min čitanja"
+              category="Događaji"
+              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // Highlighted (blue star)
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Featured Article */}
       <section className="py-16">
         <div className="container">
@@ -140,13 +181,6 @@ export default function NewsPage() {
                     <Calendar className="h-3 w-3" />
                     {featuredArticle.date}
                   </span>
-                  {featuredArticle.isFeatured && (
-                    <FeaturedIndicator 
-                      priority={featuredArticle.priority} 
-                      variant="badge" 
-                      size="sm" 
-                    />
-                  )}
                 </div>
                 <h2 className="mb-3 text-2xl font-bold md:text-3xl">
                   {featuredArticle.title}
@@ -202,14 +236,6 @@ export default function NewsPage() {
                     <span className="text-xs text-muted-foreground">
                       {article.date}
                     </span>
-                    {article.isFeatured && (
-                      <FeaturedIndicator 
-                        priority={article.priority} 
-                        variant="minimal" 
-                        size="sm" 
-                        className="ml-auto"
-                      />
-                    )}
                   </div>
                   <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
                     {article.title}
