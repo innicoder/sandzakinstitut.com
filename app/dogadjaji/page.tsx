@@ -133,7 +133,7 @@ export default function EventsPage() {
               date={new Date('2025-09-22')}
               readTime="5 sati"
               category="Radionica"
-              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // Highlighted (blue star)
+              priority={6} // Below featured threshold
             />
           </div>
         </div>

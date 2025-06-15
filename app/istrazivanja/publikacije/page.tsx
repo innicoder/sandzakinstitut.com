@@ -173,7 +173,7 @@ export default function PublicationsPage() {
               date={new Date('2025-05-01')}
               readTime="98 str."
               category="Ekonomija"
-              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // Highlighted (blue star)
+              priority={6} // Below featured threshold
             />
           </div>
         </div>

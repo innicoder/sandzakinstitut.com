@@ -65,7 +65,7 @@ export default function DemoFeaturedPage() {
               date={new Date('2025-06-15')}
               readTime="Highlighted"
               category="Medium Priority"
-              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // 6+ Highlighted (blue star)
+              priority={6} // Below featured threshold
             />
           </div>
         </div>
@@ -108,25 +108,12 @@ export default function DemoFeaturedPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-gray-700">
-                Standard (3-5)
+                Regular Content
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Regular featured content without special indicators. Still part of featured sections.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="opacity-60">
-            <CardHeader>
-              <CardTitle className="text-gray-500">
-                Below Threshold (&lt;3)
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Content below the minimum threshold. Not displayed in featured sections.
+                Content with priority below 8. No special indicators.
               </p>
             </CardContent>
           </Card>

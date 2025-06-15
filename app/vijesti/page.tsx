@@ -156,7 +156,7 @@ export default function NewsPage() {
               date={new Date('2025-06-10')}
               readTime="2 min čitanja"
               category="Događaji"
-              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // Highlighted (blue star)
+              priority={6} // Below featured threshold
             />
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function NewsPage() {
                 key={article.id} 
                 className={cn(
                   "group hover:shadow-lg transition-shadow",
-                  article.isFeatured && article.priority >= PRIORITY_THRESHOLDS.HIGHLIGHTED && "border-primary/30 bg-gradient-to-br from-blue-50/20 to-transparent"
+                  article.isFeatured && article.priority >= PRIORITY_THRESHOLDS.FEATURED && "border-amber-200/30 bg-gradient-to-br from-amber-50/20 to-transparent"
                 )}
               >
                 <div className="aspect-[16/9] overflow-hidden bg-muted">

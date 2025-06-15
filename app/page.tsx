@@ -141,7 +141,7 @@ export default function Home() {
               date={new Date('2025-06-10')}
               readTime="3 min čitanja"
               category="Događaji"
-              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // 6+ Highlighted (blue)
+              priority={6} // Below featured threshold
             />
 
             <FeaturedCard
@@ -155,7 +155,7 @@ export default function Home() {
               date={new Date('2025-06-05')}
               readTime="4 min čitanja"
               category="Saradnja"
-              priority={PRIORITY_THRESHOLDS.HIGHLIGHTED} // 6+ Highlighted (blue)
+              priority={6} // Below featured threshold
             />
           </div>
         </div>
