@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-300 hover:border-primary/20">
+            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-200 hover:border-primary/20">
               <CardHeader className="space-y-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
                   <BookOpen className="h-7 w-7 text-primary" />
@@ -66,7 +66,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-300 hover:border-primary/20">
+            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-200 hover:border-primary/20">
               <CardHeader className="space-y-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
                   <Users className="h-7 w-7 text-primary" />
@@ -81,7 +81,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-300 hover:border-primary/20">
+            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-200 hover:border-primary/20">
               <CardHeader className="space-y-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
                   <Globe className="h-7 w-7 text-primary" />
@@ -96,7 +96,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-300 hover:border-primary/20">
+            <Card className="card-hover border-2 border-transparent bg-background transition-all duration-200 hover:border-primary/20">
               <CardHeader className="space-y-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
                   <Calendar className="h-7 w-7 text-primary" />

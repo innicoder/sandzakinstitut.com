@@ -16,9 +16,9 @@ const sectionVariants = {
 };
 
 const sectionSizes = {
-  sm: "py-12 md:py-16 lg:py-20",
-  default: "py-16 md:py-20 lg:py-28",
-  lg: "py-20 md:py-28 lg:py-36",
+  sm: "py-14 md:py-18 lg:py-24",
+  default: "py-20 md:py-24 lg:py-32",
+  lg: "py-24 md:py-32 lg:py-40",
 };
 
 export function Section({

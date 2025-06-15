@@ -53,7 +53,7 @@ export function FeaturedCard({
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-200 group-hover:scale-105"
               priority={priority >= PRIORITY_THRESHOLDS.FEATURED}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -83,9 +83,7 @@ export function FeaturedCard({
 
             {/* Featured indicator */}
             {isFeatured && (
-              <span className="flex items-center gap-1.5 bg-amber-100 border border-amber-300 text-amber-800 px-2.5 py-1 rounded-md shadow-sm">
                 <Crown className="h-3.5 w-3.5" />
-              </span>
             )}
           </div>
 

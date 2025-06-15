@@ -103,7 +103,7 @@ export default function NewsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="border-b py-6">
+      <section className="border-b pb-8 pt-6">
         <div className="container">
           <div className="flex gap-2 overflow-x-auto pb-2">
             {categories.map((category) => (

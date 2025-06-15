@@ -221,7 +221,7 @@ export function Header() {
             </MobileNavLink>
             
             {/* Contact info in mobile */}
-            <div className="pt-4 mt-4 border-t border-border/20">
+            <div className="pt-6 mt-2 border-t border-border/20">
               <p className="text-sm text-muted-foreground px-4">
                 <a href="tel:+38120123456" className="hover:text-primary transition-colors">+381 20 123 456</a>
                 <br />

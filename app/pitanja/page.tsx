@@ -128,7 +128,7 @@ export default function FAQPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="border-b py-6">
+      <section className="border-b pb-8 pt-6">
         <div className="container">
           <div className="flex flex-wrap gap-2">
             <Button
