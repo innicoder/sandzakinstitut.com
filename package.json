@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "next build",
+    "pages:deploy": "npx wrangler pages deploy out --project-name=sandzakinstitut",
+    "deploy": "npm run build && npm run pages:deploy"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
@@ -21,6 +24,7 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.12",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -30,6 +34,7 @@
     "eslint-config-next": "15.3.3",
     "postcss": "^8.5.5",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.20.0"
   }
 }
