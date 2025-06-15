@@ -124,37 +124,37 @@ export function Footer() {
           <div>
             <h3 className="mb-6 text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">Kontakt informacije</h3>
             <ul className="space-y-4 text-sm">
-              <li className="flex items-start space-x-3">
-                <div className="p-2 rounded-sm bg-primary/5">
+              <li className="flex items-start gap-3">
+                <div className="p-2 rounded-sm bg-primary/5 flex-shrink-0 mt-0.5">
                   <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <div>
-                  <p className="font-medium text-foreground mb-1">Adresa</p>
-                  <span className="text-muted-foreground leading-relaxed">
+                <div className="flex-1">
+                  <p className="font-medium text-foreground mb-0.5">Adresa</p>
+                  <span className="text-muted-foreground leading-relaxed block">
                     Ul. Sandžačka 123<br />
                     36300 Novi Pazar<br />
                     Srbija
                   </span>
                 </div>
               </li>
-              <li className="flex items-start space-x-3">
-                <div className="p-2 rounded-sm bg-primary/5">
+              <li className="flex items-start gap-3">
+                <div className="p-2 rounded-sm bg-primary/5 flex-shrink-0 mt-0.5">
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
-                <div>
-                  <p className="font-medium text-foreground mb-1">Telefon</p>
-                  <a href="tel:+38120123456" className="text-muted-foreground hover:text-primary transition-colors">
+                <div className="flex-1">
+                  <p className="font-medium text-foreground mb-0.5">Telefon</p>
+                  <a href="tel:+38120123456" className="text-muted-foreground hover:text-primary transition-colors block">
                     +381 20 123 456
                   </a>
                 </div>
               </li>
-              <li className="flex items-start space-x-3">
-                <div className="p-2 rounded-sm bg-primary/5">
+              <li className="flex items-start gap-3">
+                <div className="p-2 rounded-sm bg-primary/5 flex-shrink-0 mt-0.5">
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
-                <div>
-                  <p className="font-medium text-foreground mb-1">Email</p>
-                  <a href="mailto:info@institutsandzak.org" className="text-muted-foreground hover:text-primary transition-colors">
+                <div className="flex-1">
+                  <p className="font-medium text-foreground mb-0.5">Email</p>
+                  <a href="mailto:info@institutsandzak.org" className="text-muted-foreground hover:text-primary transition-colors block">
                     info@institutsandzak.org
                   </a>
                 </div>

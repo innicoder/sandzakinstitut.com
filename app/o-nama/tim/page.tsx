@@ -90,8 +90,8 @@ export default function TeamPage() {
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
-              <Card key={member.id} className="overflow-hidden">
-                <div className="aspect-square bg-muted">
+              <Card key={member.id} className="overflow-hidden flex flex-col h-full">
+                <div className="aspect-square bg-muted relative">
                   <div className="flex h-full items-center justify-center text-muted-foreground">
                     <GraduationCap className="h-12 w-12" />
                   </div>
@@ -102,14 +102,13 @@ export default function TeamPage() {
                     {member.title}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="flex-1 space-y-4">
                   <p className="text-sm text-muted-foreground">
                     {member.bio}
                   </p>
                   
                   <div>
-                    <h4 className="mb-2 flex items-center gap-2 text-sm font-semibold">
-                      <Award className="h-4 w-4" />
+                    <h4 className="mb-2 text-sm font-semibold text-muted-foreground">
                       Oblasti ekspertize
                     </h4>
                     <div className="flex flex-wrap gap-1">
@@ -123,24 +122,33 @@ export default function TeamPage() {
                       ))}
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-3 pt-2">
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="text-muted-foreground hover:text-primary"
-                      title="Email"
-                    >
-                      <Mail className="h-5 w-5" />
-                    </a>
-                    <a
-                      href={member.linkedin}
-                      className="text-muted-foreground hover:text-primary"
-                      title="LinkedIn"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  </div>
                 </CardContent>
+                
+                {/* Contact section with better positioning */}
+                <div className="border-t bg-muted/30 px-6 py-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Award className="h-3.5 w-3.5" />
+                      <span>Verifikovani stručnjak</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="rounded-full bg-background p-2 text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                        title={`Email: ${member.email}`}
+                      >
+                        <Mail className="h-4 w-4" />
+                      </a>
+                      <a
+                        href={member.linkedin}
+                        className="rounded-full bg-background p-2 text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                        title="LinkedIn profil"
+                      >
+                        <Linkedin className="h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
@@ -152,7 +160,7 @@ export default function TeamPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Pridružite se našem timu</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg text-primary-foreground">
               Tražimo talentovane istraživače i stručnjake koji dijele našu
               strast za razvojem regije Sandžak
             </p>

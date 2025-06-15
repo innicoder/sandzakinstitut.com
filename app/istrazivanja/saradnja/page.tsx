@@ -271,7 +271,7 @@ export default function CollaborationPage() {
           <Card className="bg-primary text-primary-foreground">
             <CardContent className="p-8 text-center md:p-12">
               <h2 className="mb-4 text-3xl font-bold">Spremni za saradnju?</h2>
-              <p className="mb-8 text-lg opacity-90">
+              <p className="mb-8 text-lg">
                 Kontaktirajte nas danas i razgovarajmo o tome kako možemo
                 zajedno doprinijeti razvoju regije Sandžak
               </p>

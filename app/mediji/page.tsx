@@ -228,7 +228,7 @@ export default function MediaPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Baza stručnjaka</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg text-primary-foreground">
               Naši stručnjaci su dostupni za medijske nastupe, komentare
               i intervjue o temama iz njihovih oblasti ekspertize
             </p>

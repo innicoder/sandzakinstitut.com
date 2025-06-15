@@ -130,7 +130,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Pridružite se našoj misiji</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg text-primary-foreground">
               Zajedno možemo doprinijeti boljem razumijevanju i razvoju regije Sandžak
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

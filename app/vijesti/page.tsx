@@ -282,20 +282,21 @@ export default function NewsPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Ne propustite nijednu vijest</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg">
               Prijavite se za naš newsletter i budite među prvima koji će
               saznati o našim aktivnostima
             </p>
-            <div className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row">
+            <form className="mx-auto flex max-w-lg flex-col gap-4 sm:flex-row">
               <input
                 type="email"
-                placeholder="Vaša email adresa"
-                className="flex-1 rounded-md bg-background px-4 py-2 text-foreground placeholder:text-muted-foreground"
+                placeholder="Unesite vašu email adresu"
+                className="flex-1 rounded-lg border-0 bg-white/10 px-6 py-3 text-primary-foreground placeholder:text-primary-foreground/70 backdrop-blur-sm focus:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/30"
+                required
               />
-              <Button size="lg" variant="secondary">
+              <Button size="lg" className="min-w-[140px] bg-white text-primary hover:bg-white/90">
                 Prijavite se
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </section>

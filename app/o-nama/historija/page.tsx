@@ -132,10 +132,10 @@ export default function HistoryPage() {
           </div>
 
           <div className="mx-auto max-w-4xl">
-            {timelineData.map((item) => {
+            {timelineData.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={item.year} className="mb-12 grid gap-8 md:grid-cols-[200px_1fr]">
+                <div key={`timeline-${index}`} className="mb-12 grid gap-8 md:grid-cols-[200px_1fr]">
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
                       <Icon className="h-6 w-6" />
@@ -243,7 +243,7 @@ export default function HistoryPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Budite dio naše priče</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg text-primary-foreground">
               Pridružite se našoj misiji očuvanja i promovisanja nasljeđa Sandžaka
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

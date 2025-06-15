@@ -206,7 +206,7 @@ export default function ProjectsPage() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {completedProjects.map((project) => (
-              <Card key={project.id}>
+              <Card key={project.id} className="flex flex-col">
                 <CardHeader>
                   <div className="mb-2 flex items-center justify-between">
                     <span className="text-xs font-medium text-muted-foreground">
@@ -218,7 +218,7 @@ export default function ProjectsPage() {
                   </div>
                   <CardTitle className="text-lg">{project.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex flex-1 flex-col">
                   <CardDescription className="mb-4">{project.description}</CardDescription>
                   
                   <div className="mb-4">
@@ -233,13 +233,15 @@ export default function ProjectsPage() {
                     <p className="text-sm text-muted-foreground">{project.results}</p>
                   </div>
 
-                  <Link
-                    href={`/istrazivanja/projekti/arhiva/${project.id}`}
-                    className="inline-flex items-center text-sm font-medium text-primary hover:underline"
-                  >
-                    Detaljan izvještaj
-                    <ExternalLink className="ml-1 h-3 w-3" />
-                  </Link>
+                  <div className="mt-auto pt-4">
+                    <Link
+                      href={`/istrazivanja/projekti/arhiva/${project.id}`}
+                      className="inline-flex items-center text-sm font-medium text-primary hover:underline"
+                    >
+                      Detaljan izvještaj
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -253,7 +255,7 @@ export default function ProjectsPage() {
           <Card className="bg-primary text-primary-foreground">
             <CardContent className="p-8 text-center md:p-12">
               <h2 className="mb-4 text-3xl font-bold">Imate ideju za projekat?</h2>
-              <p className="mb-8 text-lg opacity-90">
+              <p className="mb-8 text-lg text-primary-foreground">
                 Otvoreni smo za saradnju na projektima koji doprinose razvoju
                 regije Sandžak. Kontaktirajte nas sa vašim prijedlogom.
               </p>

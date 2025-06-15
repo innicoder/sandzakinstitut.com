@@ -267,7 +267,7 @@ export default function EventsPage() {
           <Card className="bg-primary text-primary-foreground">
             <CardContent className="p-8 text-center md:p-12">
               <h2 className="mb-4 text-3xl font-bold">Organizujte događaj sa nama</h2>
-              <p className="mb-8 text-lg opacity-90">
+              <p className="mb-8 text-lg text-primary-foreground">
                 Institut Sandžak je otvoren za saradnju u organizaciji događaja
                 koji doprinose razvoju regije i jačanju kapaciteta zajednice.
               </p>

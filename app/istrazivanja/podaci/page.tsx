@@ -312,7 +312,7 @@ export default function DataPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Trebate posebne podatke?</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg text-primary-foreground">
               Ako ne možete pronaći podatke koji su vam potrebni, kontaktirajte nas
               i pomoći ćemo vam u pronalaženju ili prikupljanju informacija.
             </p>

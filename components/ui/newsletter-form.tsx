@@ -77,7 +77,7 @@ export function NewsletterForm({
         required
         disabled={status === "loading"}
         className={`
-          ${variant === "inline" ? "flex-1" : ""}
+          ${variant === "inline" ? "flex-1 rounded-lg px-6 py-3" : "rounded-lg px-6 py-3"}
           ${status === "error" ? "border-red-500" : ""}
         `}
       />

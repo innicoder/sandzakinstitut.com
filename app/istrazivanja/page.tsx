@@ -295,7 +295,7 @@ export default function ResearchPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold">Želite saradnju?</h2>
-            <p className="mb-8 text-lg opacity-90">
+            <p className="mb-8 text-lg text-primary-foreground">
               Otvoreni smo za partnerstva sa institucijama koje dijele našu viziju
               razvoja regije kroz nauku i znanje
             </p>

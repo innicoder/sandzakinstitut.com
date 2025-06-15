@@ -67,23 +67,23 @@ export function FeaturedCard({
         {/* Content section */}
         <div className="p-6 md:p-8">
           {/* Meta information */}
-          <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+          <div className="mb-4 flex flex-wrap sm:flex-nowrap items-center gap-3 text-sm text-muted-foreground overflow-hidden">
             {category && (
-              <span className="rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 hover:shadow-md">
+              <span className="rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 hover:shadow-md whitespace-nowrap">
                 {category}
               </span>
             )}
             
             {date && (
-              <span className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
+              <span className="flex items-center gap-1 whitespace-nowrap">
+                <Calendar className="h-3 w-3 flex-shrink-0" />
                 {`${date.getDate()}. ${['jan', 'feb', 'mart', 'apr', 'maj', 'jun', 'jul', 'avg', 'sept', 'okt', 'nov', 'dec'][date.getMonth()]} ${date.getFullYear()}.`}
               </span>
             )}
 
             {/* Featured indicator */}
             {isFeatured && (
-                <Crown className="h-3.5 w-3.5" />
+                <Crown className="h-3.5 w-3.5 flex-shrink-0" />
             )}
           </div>
 

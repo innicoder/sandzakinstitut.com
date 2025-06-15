@@ -47,7 +47,7 @@ export function Header() {
             <div className="flex items-center gap-4">
               <span>Nezavisna istraživačka institucija</span>
               <span className="text-border">|</span>
-              <span>Osnovana 2020. godine</span>
+              <span>Osnovana 2022. godine</span>
             </div>
             <div className="flex items-center gap-4">
               <a href="tel:+38120123456" className="hover:text-primary transition-colors">+381 20 123 456</a>

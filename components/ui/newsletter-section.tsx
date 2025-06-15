@@ -18,17 +18,24 @@ export function NewsletterSection({
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold">{title}</h2>
-          <p className={`mb-8 text-lg ${variant === "primary" ? "opacity-90" : "text-muted-foreground"}`}>
+          <p className={`mb-8 text-lg ${variant === "primary" ? "text-primary-foreground" : "text-muted-foreground"}`}>
             {description}
           </p>
-          <form className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row">
+          <form className="mx-auto flex max-w-lg flex-col gap-4 sm:flex-row">
             <input
               type="email"
-              placeholder="Vaša email adresa"
+              placeholder="Unesite vašu email adresu"
               required
-              className="flex-1 rounded-md bg-background px-4 py-2 text-foreground placeholder:text-muted-foreground"
+              className={variant === "primary" 
+                ? "flex-1 rounded-lg border-0 bg-white/10 px-6 py-3 text-primary-foreground placeholder:text-primary-foreground/70 backdrop-blur-sm focus:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/30"
+                : "flex-1 rounded-lg border border-input bg-background px-6 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+              }
             />
-            <Button type="submit" size="lg" variant={variant === "primary" ? "secondary" : "default"}>
+            <Button 
+              type="submit" 
+              size="lg" 
+              className={variant === "primary" ? "min-w-[140px] bg-white text-primary hover:bg-white/90" : "min-w-[140px]"}
+            >
               Prijavite se
             </Button>
           </form>
