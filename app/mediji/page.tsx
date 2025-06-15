@@ -118,6 +118,7 @@ export default function MediaPage() {
 
               <Card>
                 <CardHeader>
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
                   <Image className="mb-2 h-8 w-8 text-primary" />
                   <CardTitle>Logotipi i vizuali</CardTitle>
                 </CardHeader>
