@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ArrowRight, Calendar, User, Clock } from "lucide-react";
+// import { parseBosnianDate } from "@/lib/date-utils";
+import { cn } from "@/lib/utils";
+import { PRIORITY_THRESHOLDS } from "@/lib/featured-content";
+import { FeaturedIndicator } from "@/components/ui/featured-indicator";
 
 // Mock news data
 const newsArticles = [
@@ -15,6 +19,8 @@ const newsArticles = [
     readTime: "3 min čitanja",
     imageUrl: "/api/placeholder/400/300",
     slug: "demografska-studija-2025",
+    isFeatured: true,
+    priority: PRIORITY_THRESHOLDS.FEATURED,
   },
   {
     id: 2,
@@ -134,6 +140,13 @@ export default function NewsPage() {
                     <Calendar className="h-3 w-3" />
                     {featuredArticle.date}
                   </span>
+                  {featuredArticle.isFeatured && (
+                    <FeaturedIndicator 
+                      priority={featuredArticle.priority} 
+                      variant="badge" 
+                      size="sm" 
+                    />
+                  )}
                 </div>
                 <h2 className="mb-3 text-2xl font-bold md:text-3xl">
                   {featuredArticle.title}
@@ -168,7 +181,13 @@ export default function NewsPage() {
         <div className="container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {otherArticles.map((article) => (
-              <Card key={article.id} className="group hover:shadow-lg transition-shadow">
+              <Card 
+                key={article.id} 
+                className={cn(
+                  "group hover:shadow-lg transition-shadow",
+                  article.isFeatured && article.priority >= PRIORITY_THRESHOLDS.HIGHLIGHTED && "border-primary/30 bg-gradient-to-br from-blue-50/20 to-transparent"
+                )}
+              >
                 <div className="aspect-[16/9] overflow-hidden bg-muted">
                   <div className="flex h-full items-center justify-center text-muted-foreground">
                     Slika članka
@@ -183,6 +202,14 @@ export default function NewsPage() {
                     <span className="text-xs text-muted-foreground">
                       {article.date}
                     </span>
+                    {article.isFeatured && (
+                      <FeaturedIndicator 
+                        priority={article.priority} 
+                        variant="minimal" 
+                        size="sm" 
+                        className="ml-auto"
+                      />
+                    )}
                   </div>
                   <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
                     {article.title}

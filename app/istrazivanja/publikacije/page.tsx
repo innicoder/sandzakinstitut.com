@@ -27,6 +27,9 @@ const publications = [
     abstract: "Studija o mogućnostima razvoja održivog turizma sa fokusom na kulturno-istorijske znamenitosti. Analiza postojećih kapaciteta i preporuke za unapređenje turističke ponude.",
     pdfUrl: "#",
     pages: 98,
+    featured: true,
+    featuredPriority: 6, // Recommended
+    featuredUntil: new Date('2025-03-15'),
   },
   {
     id: 3,

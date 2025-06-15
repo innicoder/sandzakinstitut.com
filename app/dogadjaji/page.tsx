@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { Calendar, Clock, MapPin, Users, ArrowRight, Info } from "lucide-react";
+// import { FeaturedSection } from "@/components/ui/featured-section";
+// import { selectFeaturedContent } from "@/lib/featured-content";
 
 // Mock events data
 const upcomingEvents = [
@@ -15,6 +17,10 @@ const upcomingEvents = [
     capacity: "150 mjesta",
     type: "Konferencija",
     registrationOpen: true,
+    // Featured metadata
+    featured: true,
+    featuredPriority: 9, // Important event
+    featuredUntil: new Date('2025-10-15'),
   },
   {
     id: 2,
@@ -26,6 +32,9 @@ const upcomingEvents = [
     capacity: "30 mjesta",
     type: "Radionica",
     registrationOpen: true,
+    featured: true,
+    featuredPriority: 7, // Recommended
+    featuredUntil: new Date('2025-09-22'),
   },
   {
     id: 3,
@@ -71,6 +80,23 @@ const pastEvents = [
 ];
 
 export default function EventsPage() {
+  // // Get featured events
+  // const allEvents = [...upcomingEvents, ...pastEvents];
+  // const featuredEvents = selectFeaturedContent(upcomingEvents, {
+  //   maxItems: 3,
+  //   minPriority: 1,
+  // });
+  
+  // // Transform to FeaturedSection format
+  // const featuredItems = featuredEvents.map(event => ({
+  //   id: event.id.toString(),
+  //   title: event.title,
+  //   description: event.description,
+  //   href: `/dogadjaji/${event.id}`,
+  //   category: event.type,
+  //   featured: event.featured || false,
+  //   featuredPriority: event.featuredPriority,
+  // }));
   return (
     <>
       {/* Hero Section */}
@@ -88,8 +114,10 @@ export default function EventsPage() {
         </div>
       </section>
 
+      {/* Featured Events - removed to avoid duplication */}
+
       {/* Upcoming Events */}
-      <section className="py-16 md:py-24">
+      <section id="upcoming-events" className="py-16 md:py-24">
         <div className="container">
           <div className="mb-12">
             <h2 className="mb-4 text-3xl font-bold">Predstojeći događaji</h2>
