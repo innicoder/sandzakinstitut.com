@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "pages:build": "next build",
-    "pages:deploy": "npx wrangler pages deploy out --project-name=sandzakinstitut",
+    "pages:deploy": "wrangler pages deploy",
     "deploy": "npm run build && npm run pages:deploy"
   },
   "dependencies": {
